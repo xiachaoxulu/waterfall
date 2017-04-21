@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sweet love</title>
+    <style lang="">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .view {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 20px;
+            right: 20px;
+            top: 20px;
+            bottom: 20px;
+            background: #f2f2f2;
+            background-image: url('./get.jpeg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .close {
+            position: absolute;
+            right: -15px;
+            top: -15px;
+            width: 30px;
+            height: 30px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyppVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDMTM0MDZFRjE5MDYxMUU3ODhBNUQ3NEVCNzgxREVGRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDMTM0MDZGMDE5MDYxMUU3ODhBNUQ3NEVCNzgxREVGRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkMxMzQwNkVEMTkwNjExRTc4OEE1RDc0RUI3ODFERUZFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkMxMzQwNkVFMTkwNjExRTc4OEE1RDc0RUI3ODFERUZFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+eOAfXQAAAy9JREFUeNrUmUtoU0EUhqchqRgNBaOLYqpooVpURLSg7tqllIoWFW0WPha2vtbiwoW6ceVG8YHULuILEUF87MyyohVdKNhCETGlG7so0QoJJJ7fnrmMsffOzO0ksT/8DTQz53z3ZubOzLkN5XJZLARF8Wf1+c9h+kbIHeRO8jZyG3kleQl//5M8QR4jj5Cz5Lfkkm2irxfWz4JaKkU+Se4jtwS0W0ReRt5E7uX/fSPfJV8j52zviqmSnGCcfFYD6acW7jvOsZKuQfeTMT5OkBsdDLlGjoWYB1yAYmhcJz8kL6/CHEHMB5wjGhY0Tn5C7q/BpO7nXHFbUFzdfXJ3DZ9A3ZwzagN6ldxTh8dlD+c2AsXgPl7HZztyH9SBJv2uqMYCw4og0Eu62b13c5NYHIuEJkBfxNAIC8VFP9BV5GNBvfdtaRJXepvFnXQqFCz6DPal/sRALI2OMtM/oAPkWFDPZx/z4vWXGbFjTdwaVkLuXBsXwxQDsTSKMdNfoPhM63r+KpbE4UzOGrYS8gjFQCwDpSWjzNLBmw3hGhbfoU0ISLkB6lBBu2zGmimshESbEJBSnSroVtveOlhHkIL3uh7oujAR/GAdQnpscl1tDhtFwg4xGAAhR5Aem7yjiflEqryzDiE9tohwqGoeEyVofj5B1DGJuzocclHwUV4FnXQFiSGAn9wh7KQKOuoKEmMSdgg7qoK+cwWpTjBHsCMqaNYlpGPYrAr6xrQggERDBpCOYHNcXfFAkSljCrndENIBbEaWgNTWqFwUAo+JGxPWkH6wiKVRgZmEqDia4jbf5grGnHr0flqU6Kn+4lM+1IojYXdtSIjHH6Z1zQfV4diAsqNSzUvy4yAp6qsp3oxMyWpeZI4Gp/6DU+gZCRl0rkct6GYdIW+R75lWSnBFT+sAiZynbUo6Ba5WvKwh5HPOWbCt5s2Qd9doGCDHHs5pXXaEilwSxJV+rwIgYh7iHEWT/ahOmGDt5Bu6RcFQBY7VzqVG442z6dWjctFKvixm33jYaoL7tnIs418pzFsRrBZ4YXCOiwNdfNxu44LBUm73g9uO8TbylQj5+sZbmRaCfgswADN0kx0wDuVoAAAAAElFTkSuQmCC) no-repeat;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        .index,
+        .main {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 0;
+            height: 100%;
+        }
+
+        .index {
+            display: none;
+            z-index: 3;
+        }
+
+        .arrow {
+            position: absolute;
+            left: 50%;
+            margin-left: -15px;
+            bottom: 20px;
+            width: 30px;
+            height: 30px;
+            animation: arrowAnimate 1s infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAYCAYAAADkgu3FAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAkRJREFUeNqslUFIVFEUhm9PaSEpsxlo4UJ00TCQLlq4lQgdjRIkWogYtLCVUCtX7Vy5S7BWirgRF4NoRKEh1sp2iUKLsJUrBaXAigGx/wzfi8vlzZs35Q/f3Jn77vnPm/vuOe/KzuqjC+fcT3FXbLvLU594I1rEdKSPWX6si95LStKLn/m+EM8t0VOxIFrFO9Hzn0l68GnF95lNWiLbugmxInJiUxT+MUmB+Bx+E/hXE5nOxbh4LfIs7mwwSRdxeXzG8XV+IlNFPBRbop2g9oxJbN0G4xY+FX9BFAT8FvfFDv8ovsM0+TtgcffwcWmJTGeiJD6z5+/Z8yTluF5gfYlScVkSmb6LfvFFdHOK2oI1bcx3s66fOFcr0S1RTLh2TPABdbFGXTjGNeYPWHec4FHE/6Yl+iT2OYqhDjE5pNLL4hpjH/MDjKGe4Gv+xYgJ0ysxlhDwzbtjewZfGf1/HMp8XvK9WqOWaJ7qte+LYiQh0H8G14NnGGoEH7/r/D0M1X4kmsQydxwqPlVH3qkMVSK+Cb/ZpFM3LWbEVe8ZhLI66WBM6tZl4mfwq3m8p8RccKpC/arRreNTOYdP3TqaFEtBnaTJr7Ml4jMVrHXbx2yDX/lJuuF1jjJxF410Buu6o+JtSjfvJEmedaN+t86aKO7mD3i9h93c79bbrKuk7W9UZ/+tQQ5T3XE3LzJ2MT9cq5H6as7wrvkhBsUH61lil7g9McT1uopcNp2KO7SfZkb7fZL19Zs1kaMj3BYfGY8aec//EWAA0x6OaGsa72AAAAAASUVORK5CYII=") no-repeat 50% 80%;
+        }
+
+        @keyframes arrowAnimate {
+
+            0% {
+                transform: scale(.7) rotate(180deg)
+            }
+            100% {
+                transform: scale(1) rotate(180deg)
+            }
+        }
+
+        .main {
+            overflow-y: auto;
+            background: white;
+        }
+
+        .two {
+            height: 1200px;
+            overflow: hidden;
+        }
+
+        .left,
+        .right {
+            display: inline-block;
+            width: 170px;
+            background: #00A29F;
+            height: 100%;
+            padding-top: 15px;
+        }
+
+        .left {
+            margin-left: 13px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="view">
+        <div class="close"></div>
+    </div>
+    <div class="index">
+
+        <div class="arrow"></div>
+    </div>
+    <div class="main">
+        <div class="two">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var view = {
+            init: function () {
+                document.querySelector('.close').addEventListener('touchend', function () {
+                    this.close();
+                }.bind(this))
+            },
+            show: function (path) {
+                var v = document.querySelector('.view')
+                if (path) {
+                    v.style.backgroundImage = 'url(' + path + ')'
+                }
+                v.style.display = 'block'
+            },
+            close() {
+                var v = document.querySelector('.view')
+                v.style.display = 'none'
+            }
+        }
+        view.init();
+
+        (function () {
+            var index = document.querySelector('.index');
+            var startX, startY;
+            index.addEventListener('touchstart', function (event) {
+                if (event.targetTouches.length === 1) {
+                    startX = event.targetTouches[0].clientX;
+                    startY = event.targetTouches[0].clientY;
+                } else {
+                    startX = null;
+                    startY = null;
+                }
+            })
+            var max = 100;
+            index.addEventListener('touchend', function (event) {
+                if (event.changedTouches.length === 1) {
+                    var endX = event.changedTouches[0].clientX;
+                    var endY = event.changedTouches[0].clientY;
+                    if ((startY - endY) > 20) {
+                        var timer = setInterval(function () {
+                            max = max - 3;
+                            index.style.height = max + '%'
+                            if (max <= 0) {
+                                clearInterval(timer)
+                                index.style.display = 'none'
+                            }
+                        }, 10)
+                    }
+                }
+            })
+        })()
+    </script>
+</body>
+
+</html>
